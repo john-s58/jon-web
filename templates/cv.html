@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}CV - {{ config.extra.author }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Curriculum Vitae</h1>
+        <p>Professional Experience & Qualifications</p>
+    </div>
+</section>
+
+<section class="cv-content">
+    <div class="container">
+        <div class="cv-section">
+            <h2>Professional Experience</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-header">
+                    <h3>Senior Software Developer</h3>
+                    <span class="cv-date">2022 - Present</span>
+                </div>
+                <h4>Company Name</h4>
+                <ul>
+                    <li>Led development of microservices architecture reducing system latency by 40%</li>
+                    <li>Mentored junior developers and conducted code reviews</li>
+                    <li>Implemented CI/CD pipelines improving deployment efficiency</li>
+                </ul>
+            </div>
+            
+            <div class="cv-entry">
+                <div class="cv-header">
+                    <h3>Software Developer</h3>
+                    <span class="cv-date">2020 - 2022</span>
+                </div>
+                <h4>Previous Company</h4>
+                <ul>
+                    <li>Developed and maintained RESTful APIs serving 100K+ daily users</li>
+                    <li>Collaborated with cross-functional teams to deliver features on schedule</li>
+                    <li>Optimized database queries improving response times by 60%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>Education</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-header">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <span class="cv-date">2016 - 2020</span>
+                </div>
+                <h4>University Name</h4>
+                <p>GPA: 3.8/4.0 | Dean's List</p>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <p>JavaScript, Python, Rust, Go, TypeScript</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks</h4>
+                    <p>React, Node.js, Django, Express, FastAPI</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <p>PostgreSQL, MongoDB, Redis, MySQL</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Technologies</h4>
+                    <p>Docker, Kubernetes, AWS, Git, CI/CD</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>Certifications</h2>
+            <ul>
+                <li>AWS Certified Solutions Architect</li>
+                <li>Certified Kubernetes Administrator</li>
+            </ul>
+        </div>
+
+        <div class="cv-download">
+            <a href="#" class="btn btn-primary">Download PDF Version</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="about-header">
+    <div class="container">
+        <h1 class="name-title">{{ config.extra.author | upper }}</h1>
+        {% if section.extra.subtitle %}
+        <p class="subtitle">{{ section.extra.subtitle }}</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="about-content">
+    <div class="container">
+        <div class="about-text">
+            {{ section.content | safe }}
+        </div>
+    </div>
+</section>
+{% endblock %}

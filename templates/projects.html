@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - {{ config.extra.author }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Projects</h1>
+        <p>A collection of my personal and professional projects</p>
+    </div>
+</section>
+
+<section class="projects">
+    <div class="container">
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project Name 1</h3>
+                <p class="project-tech">Technologies: React, Node.js, MongoDB</p>
+                <p>Brief description of the project and what it accomplishes. This is a placeholder for your actual project.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Project</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Project Name 2</h3>
+                <p class="project-tech">Technologies: Python, Django, PostgreSQL</p>
+                <p>Brief description of the project and what it accomplishes. This is a placeholder for your actual project.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Project</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Project Name 3</h3>
+                <p class="project-tech">Technologies: Rust, WebAssembly</p>
+                <p>Brief description of the project and what it accomplishes. This is a placeholder for your actual project.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Project</a>
+                    <a href="#" class="project-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

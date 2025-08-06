@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Tags - {{ config.extra.author }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Tags</h1>
+        <p>Browse posts by tags</p>
+    </div>
+</section>
+
+<section class="tags-list">
+    <div class="container">
+        <div class="tags-grid">
+            {% for term in terms %}
+            <a href="{{ term.permalink }}" class="tag-item">
+                <span class="tag-name">{{ term.name }}</span>
+                <span class="tag-count">({{ term.pages | length }})</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Tag: {{ term.name }} - {{ config.extra.author }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Tag: {{ term.name }}</h1>
+        <p>{{ term.pages | length }} post{% if term.pages | length != 1 %}s{% endif %}</p>
+    </div>
+</section>
+
+<section class="blog-list">
+    <div class="container">
+        {% for page in term.pages %}
+        <article class="blog-preview">
+            <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+            <div class="blog-meta">
+                <time datetime="{{ page.date }}">{{ page.date | date(format="%B %d, %Y") }}</time>
+            </div>
+            <p>{{ page.summary | safe }}</p>
+            <a href="{{ page.permalink }}" class="read-more">Read more →</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
