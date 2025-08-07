@@ -73,4 +73,4 @@ date = "2022"
 
 ## Summary
 
-Experienced software engineer with 5+ years developing scalable applications and cloud-native solutions. Passionate about clean code, system design, and mentoring teams. Strong background in full-stack development with expertise in modern DevOps practices.
+Software engineer with six years of experience building data systems and production applications. Specialized in developing end-to-end data platforms, APIs, and microservices using Go, Rust, and Python. Proven track record building machine learning pipelines that serve real-time predictions and creating distributed systems on Kubernetes. Passionate about dev tools, performance intensive software, and challenging projects in open source and early-stage ventures.
