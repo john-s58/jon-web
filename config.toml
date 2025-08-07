@@ -21,7 +21,7 @@ highlight_code = true
 # Put all your custom variables here
 author = "Jonathan Sarig"
 linkedin = "https://linkedin.com/in/jonathan-sarig"
-github = "https://github.com/john-s58"
+github = "https://github.com/jon-s58"
 
 # Technologies for carousel (using SVG icons from Simple Icons)
 [[extra.technologies]]

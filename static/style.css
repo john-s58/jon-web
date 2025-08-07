@@ -114,7 +114,7 @@ header {
 
 /* About/Home Page */
 .about-header {
-    padding: 2rem 0 2rem;
+    padding: 2rem 0 1rem;
     text-align: center;
 }
 
@@ -133,7 +133,7 @@ header {
 }
 
 .about-content {
-    padding: 0 0 4rem;
+    padding: 0 0 2rem;
 }
 
 .about-text {
@@ -155,6 +155,55 @@ header {
 
 .about-text a:hover {
     color: var(--text-primary);
+}
+
+/* News Strip Marquee */
+.news-strip {
+    background: #fcfcfc;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.35rem 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.news-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.news-track {
+    display: inline-flex;
+    animation: news-scroll 40s linear infinite;
+    white-space: nowrap;
+}
+
+.news-item {
+    color: #b0b0b0;
+    font-size: 0.75rem;
+    padding: 0 0.4rem;
+    display: inline-block;
+    font-weight: 300;
+}
+
+.news-separator {
+    color: #d8d8d8;
+    padding: 0 0.3rem;
+    display: inline-block;
+    font-size: 0.6rem;
+}
+
+@keyframes news-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.news-marquee:hover .news-track {
+    animation-play-state: paused;
 }
 
 /* Page Headers */
@@ -566,7 +615,7 @@ footer {
 
 /* Technology Carousel */
 .tech-carousel-section {
-    padding: 1rem 0 3rem;
+    padding: 0 0 3rem;
     overflow: hidden;
 }
 
@@ -578,8 +627,8 @@ footer {
 }
 
 .carousel-track {
-    display: flex;
-    animation: scroll 25s linear infinite;
+    display: inline-flex;
+    animation: tech-scroll 35s linear infinite;
 }
 
 .tech-item {
@@ -619,7 +668,7 @@ footer {
     margin: 0;
 }
 
-@keyframes scroll {
+@keyframes tech-scroll {
     0% {
         transform: translateX(0);
     }

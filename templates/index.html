@@ -1,6 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section class="news-strip">
+    <div class="news-marquee">
+        <div class="news-track">
+            {% set news = get_page(path="news.md") %}
+            {% set items = news.content | striptags | split(pat="•") %}
+            {% for item in items %}
+                {% if item | trim %}
+                <span class="news-item">{{ item | trim }}</span>
+                <span class="news-separator">•</span>
+                {% endif %}
+            {% endfor %}
+            <!-- Duplicate for seamless loop -->
+            {% for item in items %}
+                {% if item | trim %}
+                <span class="news-item">{{ item | trim }}</span>
+                <span class="news-separator">•</span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <section class="about-header">
     <div class="container">
         <h1 class="name-title">{{ config.extra.author | upper }}</h1>
