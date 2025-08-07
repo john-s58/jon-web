@@ -23,6 +23,15 @@ author = "Jonathan Sarig"
 linkedin = "https://linkedin.com/in/jonathan-sarig"
 github = "https://github.com/jon-s58"
 
+# News items for the news strip
+news_items = [
+    "Currently writing a database from scratch in Rust",
+    "Building automations for small businesses",
+    "Exploring micro SaaS ideas",
+    "Learning chess",
+    "Working on a B2B2C startup in the Govtech and Consumer Product fields"
+]
+
 # Technologies for carousel (using SVG icons from Simple Icons)
 [[extra.technologies]]
 name = "Rust"
