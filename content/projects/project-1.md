@@ -1,23 +1,20 @@
 +++
-title = "E-Commerce Platform"
+title = "Example"
 weight = 1
 
 [extra]
-tech = ["React", "Node.js", "MongoDB", "Docker"]
-github = "https://github.com/yourusername/project"
-demo = "https://project-demo.com"
+tech = ["Rust"]
+github = "https://github.com/jon-s58/example"
+demo = "https://github.com"
 +++
 
-A full-stack e-commerce platform with real-time inventory management, payment processing, and admin dashboard.
+An example project to be filled later
 
 <!-- more -->
 
 ## Key Features
-- Real-time inventory tracking
-- Secure payment processing with Stripe
-- Admin dashboard for order management
-- Customer review and rating system
-- Mobile-responsive design
+- Feat1
+- Feat2
 
 ## Technical Implementation
-Built with React for the frontend and Node.js/Express for the backend API. Uses MongoDB for data persistence and Redis for caching. Deployed on AWS with Docker containers.
+Built with Rust for ...
