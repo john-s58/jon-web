@@ -6,10 +6,7 @@ template = "index.html"
 subtitle = "Software Engineer"
 +++
 
-Hi there! I'm a passionate software engineer with expertise in building scalable applications and exploring cutting-edge technologies.
-
-I specialize in full-stack development, with particular interests in systems programming, web technologies, and open-source software. My work spans from low-level system design to creating intuitive user interfaces.
-
-Through my projects and blog, I share insights about software development, best practices, and lessons learned from real-world engineering challenges.
-
-Feel free to explore my [projects](/projects), read my [blog posts](/blog), or [get in touch](/contact) for collaborations and opportunities.
+I'm Jon, a software engineer with six years of experience building data systems and production applications.
+I've built end-to-end data platforms, APIs and microservices in Go, Rust, and Python, and machine learning pipelines that serve real-time predictions. Most of my recent work involves Kubernetes, distributed systems, and internal tooling that helps teams ship faster.
+I contribute to open source whenever I can and I'm always looking for interesting projects to work on—whether that's open source contributions or early-stage startup ventures. Always learning, always building.
+Check out my [projects](/projects), read my [blog](/blog) for technical deep-dives, or [reach out](/contact) if you want to connect and talk shop.
