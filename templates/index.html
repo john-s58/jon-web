@@ -17,4 +17,32 @@
         </div>
     </div>
 </section>
+
+<section class="tech-carousel-section">
+    <div class="container">
+        <div class="tech-carousel">
+            <div class="carousel-track">
+                {% for tech in config.extra.technologies %}
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <img src="/icons/{{ tech.icon }}.svg" 
+                             alt="{{ tech.name }}">
+                    </div>
+                    <p class="tech-name">{{ tech.name }}</p>
+                </div>
+                {% endfor %}
+                <!-- Duplicate for seamless loop -->
+                {% for tech in config.extra.technologies %}
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <img src="/icons/{{ tech.icon }}.svg" 
+                             alt="{{ tech.name }}">
+                    </div>
+                    <p class="tech-name">{{ tech.name }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

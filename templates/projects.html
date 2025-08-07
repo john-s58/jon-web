@@ -6,42 +6,33 @@
 <section class="page-header">
     <div class="container">
         <h1>Projects</h1>
-        <p>A collection of my personal and professional projects</p>
+        <p>A collection of my work and contributions</p>
     </div>
 </section>
 
 <section class="projects">
     <div class="container">
         <div class="project-grid">
+            {% for project in section.pages %}
             <div class="project-card">
-                <h3>Project Name 1</h3>
-                <p class="project-tech">Technologies: React, Node.js, MongoDB</p>
-                <p>Brief description of the project and what it accomplishes. This is a placeholder for your actual project.</p>
+                <h3>{{ project.title }}</h3>
+                {% if project.extra.tech %}
+                <p class="project-tech">{{ project.extra.tech | join(sep=", ") }}</p>
+                {% endif %}
+                <div class="project-description">
+                    {{ project.summary | default(value=project.content) | safe | truncate(length=200) }}
+                </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                    <a href="#" class="project-link">GitHub</a>
+                    {% if project.extra.github %}
+                    <a href="{{ project.extra.github }}" target="_blank" class="project-link">GitHub</a>
+                    {% endif %}
+                    {% if project.extra.demo %}
+                    <a href="{{ project.extra.demo }}" target="_blank" class="project-link">Live Demo</a>
+                    {% endif %}
+                    <a href="{{ project.permalink }}" class="project-link">Read More</a>
                 </div>
             </div>
-            
-            <div class="project-card">
-                <h3>Project Name 2</h3>
-                <p class="project-tech">Technologies: Python, Django, PostgreSQL</p>
-                <p>Brief description of the project and what it accomplishes. This is a placeholder for your actual project.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                    <a href="#" class="project-link">GitHub</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <h3>Project Name 3</h3>
-                <p class="project-tech">Technologies: Rust, WebAssembly</p>
-                <p>Brief description of the project and what it accomplishes. This is a placeholder for your actual project.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                    <a href="#" class="project-link">GitHub</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

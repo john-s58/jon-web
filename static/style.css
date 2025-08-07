@@ -114,7 +114,7 @@ header {
 
 /* About/Home Page */
 .about-header {
-    padding: 5rem 0 3rem;
+    padding: 2rem 0 2rem;
     text-align: center;
 }
 
@@ -562,6 +562,75 @@ footer {
 /* Home sections - simplified */
 .home-sections {
     display: none; /* Hiding the card grid for cleaner look */
+}
+
+/* Technology Carousel */
+.tech-carousel-section {
+    padding: 1rem 0 3rem;
+    overflow: hidden;
+}
+
+.tech-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+}
+
+.tech-item {
+    flex: 0 0 auto;
+    width: 80px;
+    text-align: center;
+    margin: 0 1.5rem;
+}
+
+.tech-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--hover-bg);
+    padding: 10px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.tech-icon:hover {
+    transform: scale(1.1);
+    background: #e8e8e8;
+}
+
+.tech-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tech-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover */
+.tech-carousel:hover .carousel-track {
+    animation-play-state: paused;
 }
 
 /* Utility Classes */

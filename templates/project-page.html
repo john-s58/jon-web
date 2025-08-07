@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ config.extra.author }}{% endblock %}
+
+{% block content %}
+<article class="blog-post">
+    <div class="container">
+        <header class="post-header">
+            <h1>{{ page.title }}</h1>
+            {% if page.extra.tech %}
+            <div class="blog-meta">
+                <span class="tags">
+                    {% for tech in page.extra.tech %}
+                    <span class="tag">{{ tech }}</span>
+                    {% endfor %}
+                </span>
+            </div>
+            {% endif %}
+        </header>
+        
+        <div class="post-content">
+            {{ page.content | safe }}
+        </div>
+        
+        <footer class="post-footer">
+            <div class="project-links">
+                {% if page.extra.github %}
+                <a href="{{ page.extra.github }}" target="_blank" class="project-link">View on GitHub</a>
+                {% endif %}
+                {% if page.extra.demo %}
+                <a href="{{ page.extra.demo }}" target="_blank" class="project-link">Live Demo</a>
+                {% endif %}
+            </div>
+            <a href="/projects" class="back-link">← Back to Projects</a>
+        </footer>
+    </div>
+</article>
+{% endblock %}

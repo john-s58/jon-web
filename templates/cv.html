@@ -1,94 +1,94 @@
 {% extends "base.html" %}
 
-{% block title %}CV - {{ config.extra.author }}{% endblock %}
+{% block title %}Resume - {{ config.extra.author }}{% endblock %}
 
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1>Curriculum Vitae</h1>
+        <h1>Resume</h1>
         <p>Professional Experience & Qualifications</p>
     </div>
 </section>
 
 <section class="cv-content">
-    <div class="container">
-        <div class="cv-section">
-            <h2>Professional Experience</h2>
-            
-            <div class="cv-entry">
-                <div class="cv-header">
-                    <h3>Senior Software Developer</h3>
-                    <span class="cv-date">2022 - Present</span>
-                </div>
-                <h4>Company Name</h4>
-                <ul>
-                    <li>Led development of microservices architecture reducing system latency by 40%</li>
-                    <li>Mentored junior developers and conducted code reviews</li>
-                    <li>Implemented CI/CD pipelines improving deployment efficiency</li>
-                </ul>
-            </div>
-            
-            <div class="cv-entry">
-                <div class="cv-header">
-                    <h3>Software Developer</h3>
-                    <span class="cv-date">2020 - 2022</span>
-                </div>
-                <h4>Previous Company</h4>
-                <ul>
-                    <li>Developed and maintained RESTful APIs serving 100K+ daily users</li>
-                    <li>Collaborated with cross-functional teams to deliver features on schedule</li>
-                    <li>Optimized database queries improving response times by 60%</li>
-                </ul>
-            </div>
-        </div>
+    {% if section.content %}
+    <div class="cv-section">
+        {{ section.content | safe }}
+    </div>
+    {% endif %}
 
-        <div class="cv-section">
-            <h2>Education</h2>
-            
-            <div class="cv-entry">
-                <div class="cv-header">
-                    <h3>Bachelor of Science in Computer Science</h3>
-                    <span class="cv-date">2016 - 2020</span>
-                </div>
-                <h4>University Name</h4>
-                <p>GPA: 3.8/4.0 | Dean's List</p>
+    {% if section.extra.experience %}
+    <div class="cv-section">
+        <h2>Professional Experience</h2>
+        
+        {% for job in section.extra.experience %}
+        <div class="cv-entry">
+            <div class="cv-header">
+                <h3>{{ job.title }}</h3>
+                <span class="cv-date">{{ job.date }}</span>
             </div>
-        </div>
-
-        <div class="cv-section">
-            <h2>Technical Skills</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Languages</h4>
-                    <p>JavaScript, Python, Rust, Go, TypeScript</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Frameworks</h4>
-                    <p>React, Node.js, Django, Express, FastAPI</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Databases</h4>
-                    <p>PostgreSQL, MongoDB, Redis, MySQL</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools & Technologies</h4>
-                    <p>Docker, Kubernetes, AWS, Git, CI/CD</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cv-section">
-            <h2>Certifications</h2>
+            <h4>{{ job.company }}{% if job.location %} • {{ job.location }}{% endif %}</h4>
+            {% if job.points %}
             <ul>
-                <li>AWS Certified Solutions Architect</li>
-                <li>Certified Kubernetes Administrator</li>
+                {% for point in job.points %}
+                <li>{{ point }}</li>
+                {% endfor %}
             </ul>
+            {% endif %}
         </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
-        <div class="cv-download">
-            <a href="#" class="btn btn-primary">Download PDF Version</a>
+    {% if section.extra.education %}
+    <div class="cv-section">
+        <h2>Education</h2>
+        
+        {% for edu in section.extra.education %}
+        <div class="cv-entry">
+            <div class="cv-header">
+                <h3>{{ edu.degree }}</h3>
+                <span class="cv-date">{{ edu.date }}</span>
+            </div>
+            <h4>{{ edu.school }}</h4>
+            {% if edu.details %}
+            <p>{{ edu.details }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if section.extra.skills %}
+    <div class="cv-section">
+        <h2>Technical Skills</h2>
+        
+        <div class="skills-grid">
+            {% for skill in section.extra.skills %}
+            <div class="skill-category">
+                <h4>{{ skill.category }}</h4>
+                <p>{{ skill.items | join(sep=", ") }}</p>
+            </div>
+            {% endfor %}
         </div>
     </div>
+    {% endif %}
+
+    {% if section.extra.certifications %}
+    <div class="cv-section">
+        <h2>Certifications</h2>
+        <ul>
+            {% for cert in section.extra.certifications %}
+            <li>{{ cert.name }}{% if cert.date %} ({{ cert.date }}){% endif %}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if section.extra.pdf_link %}
+    <div class="cv-download">
+        <a href="{{ section.extra.pdf_link }}" class="btn btn-primary">Download PDF Version</a>
+    </div>
+    {% endif %}
 </section>
 {% endblock %}

@@ -22,3 +22,49 @@ highlight_code = true
 author = "Jonathan Sarig"
 linkedin = "https://linkedin.com/in/jonathan-sarig"
 github = "https://github.com/john-s58"
+
+# Technologies for carousel (using SVG icons from Simple Icons)
+[[extra.technologies]]
+name = "Rust"
+icon = "rust"
+color = "#000000"
+
+[[extra.technologies]]
+name = "Go"
+icon = "go"
+color = "#00ADD8"
+
+[[extra.technologies]]
+name = "Python"
+icon = "python"
+color = "#3776AB"
+
+[[extra.technologies]]
+name = "TypeScript"
+icon = "typescript"
+color = "#3178C6"
+
+[[extra.technologies]]
+name = "Docker"
+icon = "docker"
+color = "#2496ED"
+
+[[extra.technologies]]
+name = "K8s"
+icon = "kubernetes"
+color = "#326CE5"
+
+[[extra.technologies]]
+name = "AWS"
+icon = "amazonaws"
+color = "#232F3E"
+
+[[extra.technologies]]
+name = "n8n"
+icon = "n8n"
+color = "#EA4B71"
+
+[[extra.technologies]]
+name = "React"
+icon = "react"
+color = "#61DAFB"

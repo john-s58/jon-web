@@ -20,12 +20,18 @@
         <loc>https://john-s58.github.io/projects/</loc>
     </url>
     <url>
+        <loc>https://john-s58.github.io/projects/project-1/</loc>
+    </url>
+    <url>
+        <loc>https://john-s58.github.io/projects/project-2/</loc>
+    </url>
+    <url>
+        <loc>https://john-s58.github.io/projects/project-3/</loc>
+    </url>
+    <url>
         <loc>https://john-s58.github.io/tags/</loc>
     </url>
     <url>
         <loc>https://john-s58.github.io/tags/introduction/</loc>
-    </url>
-    <url>
-        <loc>https://john-s58.github.io/tags/web-development/</loc>
     </url>
 </urlset>
