@@ -21,22 +21,68 @@
     <div class="cv-section">
         <h2>Professional Experience</h2>
         
+        {% set_global current_company = "" %}
+        {% set_global company_roles = [] %}
+        
         {% for job in section.extra.experience %}
-        <div class="cv-entry">
-            <div class="cv-header">
-                <h3>{{ job.title }}</h3>
-                <span class="cv-date">{{ job.date }}</span>
-            </div>
-            <h4>{{ job.company }}{% if job.location %} • {{ job.location }}{% endif %}</h4>
-            {% if job.points %}
-            <ul>
-                {% for point in job.points %}
-                <li>{{ point }}</li>
-                {% endfor %}
-            </ul>
+            {% if job.company != current_company %}
+                <!-- Output previous company group if exists -->
+                {% if company_roles | length > 0 %}
+                    <div class="cv-entry">
+                        <div class="cv-company-header">
+                            <h3>{{ company_roles[0].company }}</h3>
+                            {% if company_roles[0].location %}<span class="cv-location">{{ company_roles[0].location }}</span>{% endif %}
+                        </div>
+                        {% for role in company_roles %}
+                        <div class="cv-role">
+                            <div class="cv-role-header">
+                                <h4>{{ role.title }}</h4>
+                                <span class="cv-date">{{ role.date }}</span>
+                            </div>
+                            {% if role.points %}
+                            <ul>
+                                {% for point in role.points %}
+                                <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <!-- Start new company group -->
+                {% set_global current_company = job.company %}
+                {% set_global company_roles = [job] %}
+            {% else %}
+                <!-- Add to current company group -->
+                {% set_global company_roles = company_roles | concat(with=job) %}
             {% endif %}
-        </div>
         {% endfor %}
+        
+        <!-- Output last company group -->
+        {% if company_roles | length > 0 %}
+            <div class="cv-entry">
+                <div class="cv-company-header">
+                    <h3>{{ company_roles[0].company }}</h3>
+                    {% if company_roles[0].location %}<span class="cv-location">{{ company_roles[0].location }}</span>{% endif %}
+                </div>
+                {% for role in company_roles %}
+                <div class="cv-role">
+                    <div class="cv-role-header">
+                        <h4>{{ role.title }}</h4>
+                        <span class="cv-date">{{ role.date }}</span>
+                    </div>
+                    {% if role.points %}
+                    <ul>
+                        {% for point in role.points %}
+                        <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -79,7 +125,7 @@
         <h2>Certifications</h2>
         <ul>
             {% for cert in section.extra.certifications %}
-            <li>{{ cert.name }}{% if cert.date %} ({{ cert.date }}){% endif %}</li>
+            <li>{{ cert.name }}{% if cert.organization %} - {{ cert.organization }}{% endif %}{% if cert.date %} ({{ cert.date }}){% endif %}</li>
             {% endfor %}
         </ul>
     </div>
