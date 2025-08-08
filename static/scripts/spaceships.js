@@ -1,5 +1,5 @@
 (function() {
-    const SPACESHIP_COUNT = Math.floor(Math.random() * 3) + 1;
+    const SPACESHIP_COUNT = Math.floor(Math.random() * 2) + 1;
     const TRAIL_LENGTH = 15;
     const TRAIL_LIFETIME = 2000;
     const MIN_SPEED = 0.3;
